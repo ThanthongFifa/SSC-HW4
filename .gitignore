@@ -4,3 +4,4 @@ target
 /.idea
 temp.txt
 .DS_Store
+config.properties
