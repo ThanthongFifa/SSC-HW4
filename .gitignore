@@ -1,5 +1,6 @@
 *.iml
 tomcat.8082
 target
-.idea
+/.idea
 temp.txt
+.DS_Store
