@@ -43,7 +43,9 @@
                 <th class="py-3">${user.displayName}</th>
                 <th class="align-middle">
                     <button class="btn btn-warning btn-sm" type="button"><i class="fa fa-pencil"></i>Edit</button>
-                    <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash"></i>Delete</button>
+                    <c:if test="${currentUser.username != user.username}">
+                        <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash"></i>Delete</button>
+                    </c:if>
                 </th>
             </tr>
         </c:forEach>
