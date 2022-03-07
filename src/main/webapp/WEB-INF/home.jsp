@@ -42,8 +42,8 @@
                 <th class="py-3">${user.username}</th>
                 <th class="py-3">${user.displayName}</th>
                 <th class="align-middle">
-                    <button class="btn btn-warning btn-sm" type="button"><i class="fa fa-pencil"></i></button>
-                    <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash"></i></button>
+                    <button class="btn btn-warning btn-sm" type="button"><i class="fa fa-pencil"></i>Edit</button>
+                    <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash"></i>Delete</button>
                 </th>
             </tr>
         </c:forEach>
