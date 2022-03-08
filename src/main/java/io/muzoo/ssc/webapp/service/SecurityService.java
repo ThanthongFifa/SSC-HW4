@@ -22,8 +22,7 @@ public class SecurityService {
     }};
     
     public boolean isAuthorized(HttpServletRequest request) {
-        String username = (String) request.getSession()
-                .getAttribute("username");
+        String username = (String) request.getSession().getAttribute("username");
         // do checking
        return (username != null && userCredentials.containsKey(username));
     }
