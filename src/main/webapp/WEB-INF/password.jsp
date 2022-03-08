@@ -21,7 +21,7 @@
 <div class="container-fluid mt-4">
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">SSC - Login Webapp</a>
+            <a class="navbar-brand" href="">SSC - Login Webapp</a>
             <a class="btn btn-danger" type="button" href="/logout">
                 <i class="fa fa-sign-out"></i>LogOut</a>
         </div>
@@ -43,14 +43,20 @@
 
     <div class="row justify-content-md-center">
         <div class="col-sm 12 col-md-6 col-lg-4 mt-4">
-            <h3 style="text-align: center" class="mb-3">Edit User (<b>${username}</b>)</h3>
+            <h3 style="text-align: center" class="mb-3">Edit Password (<b>${username}</b>)</h3>
             <p>${error}</p>
-            <form action="/user/edit?username=${username}" method="post" autocomplete="off">
+            <form action="/user/password?username=${username}" method="post" autocomplete="off">
                 <div class="input-group mb-3 input-group-md">
                     <span class="input-group-text" id="displayName" ><i class="fa fa-user"></i></span>
-                    <input type="text" class="form-control"
-                           name="displayName" placeholder="Display Name"
-                           aria-label="displayName" aria-describedby="displayName" autocomplete="off" value="${displayName}">
+                    <input type="password" class="form-control"
+                           name="password" placeholder="Password"
+                           aria-label="Password" aria-describedby="password" autocomplete="off" value="${password}">
+                </div>
+                <div class="input-group mb-3 input-group-md">
+                    <span class="input-group-text" id="cpassword" ><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control"
+                           name="cpassword" placeholder="Confirm Password"
+                           aria-label="Confirm Password" aria-describedby="cpassword" autocomplete="off" value="${cpassword}">
                 </div>
                 <div class="d-grid gap-2" style="text-align: right">
                     <button class="btn btn-success" type="submit">Save <i class="fa fa-save"></i></button>

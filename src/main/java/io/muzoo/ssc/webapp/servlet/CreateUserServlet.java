@@ -66,6 +66,8 @@ public class CreateUserServlet extends HttpServlet implements Routable {
                 errorMessage = "Display Name can't be blank.";
             } else if (!StringUtils.equals(password, cpassword)){
                 errorMessage = "Confirmed password mismatches.";
+            } else if (StringUtils.isBlank(password)){
+                errorMessage = "Password can't be blank.";
             }
 
             if (errorMessage != null){
