@@ -40,7 +40,39 @@
             </c:otherwise>
         </c:choose>
     </c:if>
-    ${user.username}
+
+    <div class="row justify-content-md-center">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <h3 style="text-align: center" class="mb-3">Create a New User</h3>
+            <p>${error}</p>
+            <form action="/user/create" method="post" autocomplete="off">
+                <div class="input-group mb-3 input-group-md">
+                    <span class="input-group-text" id="username"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" name="username" placeholder="Username"
+                           aria-label="Username" aria-describedby="username" autocomplete="off" value="${username}">
+                </div>
+                <div class="input-group mb-3 input-group-md">
+                    <span class="input-group-text" id="displayName"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" name="displayName" placeholder="Display Name"
+                           aria-label="displayName" aria-describedby="displayName" autocomplete="off" value="${displayName}">
+                </div>
+                <div class="input-group mb-3 input-group-md">
+                    <span class="input-group-text" id="password"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" name="password" placeholder="Password"
+                           aria-label="Password" aria-describedby="password" autocomplete="off" value="${password}">
+                </div>
+                <div class="input-group mb-3 input-group-md">
+                    <span class="input-group-text" id="cpassword"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" name="cpassword" placeholder="Confirm Password"
+                           aria-label="Confirm Password" aria-describedby="cpassword" autocomplete="off" value="${cpassword}">
+                </div>
+                <div class="d-grid gap-2" style="text-align: right">
+                    <button class="btn btn-success" type="submit">Create Account <i class="fa fa-sign-in"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </div>
 </body>
 </html>
