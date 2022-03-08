@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet implements Routable {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (!StringUtils.isBlank(username) && !StringUtils.isBlank(password)) {
-            if (securityService.authenticate(username, password, request)) {
+            if (securityService.login(request)) {
                 response.sendRedirect("/");
             } else {
                 String error = "Wrong username or password.";

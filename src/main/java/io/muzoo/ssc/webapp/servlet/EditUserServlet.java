@@ -29,8 +29,7 @@ public class EditUserServlet extends HttpServlet implements Routable {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        boolean authorized = securityService.isAuthorized(request);
-        if (authorized) {
+        if (securityService.isAuthorized(request)) {
             // do MVC in here
             String username = (String) request.getSession().getAttribute("username");
             UserService userService = UserService.getInstance();
@@ -54,8 +53,7 @@ public class EditUserServlet extends HttpServlet implements Routable {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        boolean authorized = securityService.isAuthorized(request);
-        if (authorized) {
+        if (securityService.isAuthorized(request)) {
             String username = StringUtils.trim((String) request.getParameter("username"));
             String displayName = StringUtils.trim((String) request.getParameter("displayName"));
 
