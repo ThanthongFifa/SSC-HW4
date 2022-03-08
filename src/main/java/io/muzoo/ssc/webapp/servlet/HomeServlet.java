@@ -37,9 +37,10 @@ public class HomeServlet extends HttpServlet implements Routable {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (securityService.isAuthorized(request)) {
+        boolean authorized = securityService.isAuthorized(request);
+        if (authorized) {
             // do MVC in here
-            String username = securityService.getCurrentUsername(request);
+            String username = (String) request.getSession().getAttribute("username");
             UserService userService = UserService.getInstance();
 
             request.setAttribute("currentUser", userService.findByUsername(username));

@@ -76,7 +76,6 @@
                         <th class="align-middle">
                             <a class="btn btn-light" type="button" href="/user/edit?username=${user.username}">Edit Profile<i class="fa fa-pencil"></i></a>
                             <a class="btn btn-secondary" type="button" href="/user/password?username=${user.username}">Edit Password<i class="fa fa-key"></i></a>
-<%--                            <a class="btn btn-warning" type="button" href="/user/edit?username=${user.username}">Edit<i class="fa fa-pencil"></i></a>--%>
                             <c:if test="${currentUser.username != user.username}">
 
                                 <button class="btn btn-warning"

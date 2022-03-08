@@ -35,11 +35,6 @@
                 <button class="btn btn-success" type="submit">Login <i class="fa fa-sign-in"></i></button>
             </div>
         </form>
-<%--            <div>--%>
-<%--                <a class="btn btn-success" type="button" href="/user/create">--%>
-<%--                    <i class="fa fa-user"></i> &nbsp; Create Account--%>
-<%--                </a>--%>
-<%--            </div>--%>
         </div>
     </div>
 </div>

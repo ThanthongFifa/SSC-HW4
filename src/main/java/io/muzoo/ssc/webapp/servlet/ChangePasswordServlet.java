@@ -29,7 +29,8 @@ public class ChangePasswordServlet extends HttpServlet implements Routable {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (securityService.isAuthorized(request)) {
+        boolean authorized = securityService.isAuthorized(request);
+        if (authorized) {
             // do MVC in here
             String username = (String) request.getSession().getAttribute("username");
             UserService userService = UserService.getInstance();
@@ -52,7 +53,8 @@ public class ChangePasswordServlet extends HttpServlet implements Routable {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (securityService.isAuthorized(request)) {
+        boolean authorized = securityService.isAuthorized(request);
+        if (authorized) {
             String username = StringUtils.trim((String) request.getParameter("username"));
             String password = (String) request.getParameter("password");
             String cpassword = (String) request.getParameter("cpassword");

@@ -37,12 +37,13 @@ public class DeleteUserServlet extends HttpServlet implements Routable {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (securityService.isAuthorized(request)) {
-            String username = securityService.getCurrentUsername(request);
+        boolean authorized = securityService.isAuthorized(request);
+
+        if (authorized) {
+            String username = (String) request.getSession().getAttribute("username");
             UserService userService = UserService.getInstance();
 
             try{
-                User currentUser = userService.findByUsername(username);
                 User deletingUser = userService.findByUsername(request.getParameter("username"));
 
                 if(userService.deleteUserByUsername(deletingUser.getUsername())){
