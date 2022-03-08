@@ -22,10 +22,26 @@
         <div class="container-fluid">
             <a class="navbar-brand">SSC - Login Webapp</a>
             <a class="btn btn-danger" type="button" href="/logout">
-                <i class="fa fa-sign-out"></i>Log Out</a>
+                <i class="fa fa-sign-out"></i>LogOut</a>
         </div>
     </nav>
     <h3 class="mt-4">Welcome, ${username}</h3>
+
+    <c:if test="${not empty message}">
+        <c:choose>
+            <c:when test="${hasError}">
+                <div class="alert alert-danger" role="alert">
+                        ${message}
+                </div>
+            </c:when>
+            <c:otherwise>
+                <div class="alert alert-success" role="alert">
+                        ${message}
+                </div>
+            </c:otherwise>
+        </c:choose>
+    </c:if>
+
     <table class="table table-striped table-bordered">
         <thead>
         <tr>
@@ -44,7 +60,7 @@
                 <th class="align-middle">
                     <button class="btn btn-warning btn-sm" type="button"><i class="fa fa-pencil"></i>Edit</button>
                     <c:if test="${currentUser.username != user.username}">
-                        <button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash"></i>Delete</button>
+                        <a class="btn btn-danger" type="button" href="/user/delete?username=${user.username}">Delete <i class="fa fa-trash"></i></a>
                     </c:if>
                 </th>
             </tr>
