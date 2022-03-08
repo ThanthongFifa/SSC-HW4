@@ -177,7 +177,11 @@ public class UserService {
     public static void main(String[] args) throws UserServiceException {
         UserService userService = UserService.getInstance();
         try {
-            userService.createUser("fifa", "123456", "test");
+            userService.createUser("u1", "123456", "test1");
+            userService.createUser("u2", "123456", "test2");
+            userService.createUser("u3", "123456", "test3");
+            userService.createUser("u4", "123456", "test4");
+            userService.createUser("u5", "123456", "test5");
             userService.createUser("admin", "654321", "admin");
         }
         catch(UserServiceException e){
