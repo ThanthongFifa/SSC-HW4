@@ -74,7 +74,7 @@
                         <th class="py-3">${user.username}</th>
                         <th class="py-3">${user.displayName}</th>
                         <th class="align-middle">
-                            <button class="btn btn-warning btn-sm" type="button"><i class="fa fa-pencil"></i>Edit</button>
+                            <a class="btn btn-warning" type="button" href="/user/edit?username=${user.username}">Edit<i class="fa fa-pencil"></i></a>
                             <c:if test="${currentUser.username != user.username}">
 
                                 <button class="btn btn-danger"
