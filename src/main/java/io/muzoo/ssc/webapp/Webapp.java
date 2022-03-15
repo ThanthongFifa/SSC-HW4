@@ -18,7 +18,7 @@ public class Webapp {
         docBase.mkdirs();
 
         Tomcat tomcat = new Tomcat();
-        tomcat.setPort(8082);
+        tomcat.setPort(80);
 
         SecurityService securityService = new SecurityService();
         securityService.setUserService(UserService.getInstance());
